@@ -21,3 +21,7 @@ At this point following services would be up and running:
 | 1    | `api-server`       | `:9000` |
 | 2    | `socket.io-server` | `:9002` |
 | 3    | `s3-reverse-proxy` | `:8000` |
+
+### Architecture
+![architecture](https://github.com/Ayt1da/Vercel-clone/assets/61749332/017eaa33-4589-4155-89cd-04275f7f3d5f)
+

@@ -1,7 +1,7 @@
 const express = require('express');
 const { generateSlug } = require('random-word-slugs');
 const { ContainerInstanceManagementClient } = require('@azure/arm-containerinstance');
-const { DefaultAzureCredential } = require('@azure/identity');
+const { ClientCertificateCredential } = require('@azure/identity');
 const { Server } = require('socket.io');
 const Redis = require('ioredis');
 
@@ -21,8 +21,12 @@ io.on('connection', (socket) => {
 
 io.listen(9002, () => console.log('Socket Server 9002'));
 
-const credentials = new DefaultAzureCredential();
+const pathToCertificatePemFile = `${__dirname}/combined.pem`; // Replace with path to combined certificate file
+const tenantId = 'tenantId';
+const clientId = 'clientId';
 const subscriptionId = process.env.AZURE_SUBSCRIPTION_ID; // Azure Subscription ID
+
+const credentials = new ClientCertificateCredential(tenantId, clientId, pathToCertificatePemFile);
 
 const containerInstanceClient = new ContainerInstanceManagementClient(credentials, subscriptionId);
 

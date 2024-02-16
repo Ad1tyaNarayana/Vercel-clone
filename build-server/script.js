@@ -30,6 +30,7 @@ async function init() {
     p.stdout.on('error', function (data) {
         console.log('Error', data.toString())
         publishLog(`error: ${data.toString()}`)
+        process.exit(1); // Exit the process if there is an error
     });
 
     p.on('close', async function () {
@@ -65,7 +66,7 @@ async function init() {
         }
         publishLog(`Done`)
         console.log('Done...')
-
+        process.exit(0); // Exit the process after the build is complete
     });
 }
 

@@ -1,5 +1,4 @@
-Vercel Clone using Azure
-Inspired by Piyush Garg's Vercel Clone: https://github.com/piyushgarg-dev/vercel-clone
+Vercel Clone using Azure enabling users to upload project code and receive a live deployment URL.
 
 This Project contains following services and folders:
 

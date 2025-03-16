@@ -1,4 +1,5 @@
-Vercel Clone using Azure enabling users to upload project code and receive a live deployment URL.
+# Vercel Deploy
+Vercel Deploy is a Vercel Clone using Azure enabling users to upload project code and receive a live deployment URL.
 
 This Project contains following services and folders:
 
